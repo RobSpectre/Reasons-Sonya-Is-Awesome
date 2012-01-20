@@ -105,7 +105,9 @@ def reasonSonyaIsAwesome():
                     'the journey.',
             'Rob: You and Alex form my ideal of matrimony.',
             'Rob: Your family comes first.',
-            'Rob: You do not front.']
+            'Rob: You do not front.',
+            'Bill: You speak Russian.  LOUD.',
+            'Alex: You vote in every election.']
     return choice(reasons)
 
 if __name__ == '__main__':
