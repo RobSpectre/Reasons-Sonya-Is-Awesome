@@ -1,0 +1,86 @@
+html, body {
+    background: rgb(42,30,51);
+    color: white;
+    font-family: Helvetica, Verdana, sans-serif;
+}
+
+h1, h2, h3, h4, h5 {
+    font-family: 'Lato', Verdana, sans-serif;
+    font-weight: 900;
+    color: white;
+    text-transform: uppercase;
+    letter-spacing: -2px;
+}
+
+h1 {
+    margin: -7px 0 0 0;
+    letter-spacing: -3px;
+    font-size: 4em;
+}
+
+#header a:link, #footer a:link {
+    text-decoration: none;
+    color: rgb(224,108,13);
+}
+
+#header a:hover, #footer a:hover {
+    color: rgb(217,45,11);
+}
+
+#header a:visited, #footer a:visited {
+    color: rgb(240,179,38);
+}
+
+#call-options li {
+    display: inline;
+}
+
+#call-options, #call-status {
+    display: none;
+}
+
+#call-button, #option1, #option2, #option3, #option4 {
+    font-size: 24px;
+    padding: 8px 24px;
+}
+
+#twilio-logo {
+    text-decoration: none;
+    text-align: right;
+    display: inline-block;
+    width: 166px;
+    height: 0;
+    overflow: hidden;
+    padding-top: 31px;
+    background: url('http://www.twilio.com/packages/company/img/logos_icon_poweredbysmall.png') no-repeat;
+}
+
+#image {
+    background: url('/static/images/ramones-953x953.jpg');
+    width: 953px;
+    height: 953px;
+}
+
+@media only screen and (max-width: 959px) {
+    #image {
+        background: url('/static/images/ramones-750x750.jpg');
+        width: 750px;
+        height: 750px;
+    }
+}
+
+@media only screen and (min-width: 480px) and (max-width: 767px) {
+    #image {
+        background: url('/static/images/ramones-460x460.jpg');
+        width: 460px;
+        height: 460px;
+    }
+}
+
+@media only screen and (max-width: 479px) {
+    #image {
+        background: url('/static/images/ramones-300x300.jpg');
+        width: 300px;
+        height: 300px;
+    }
+}

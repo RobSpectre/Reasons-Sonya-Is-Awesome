@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<!--[if lt IE 7 ]><html class="ie ie6" lang="en"> <![endif]-->
+<!--[if IE 7 ]><html class="ie ie7" lang="en"> <![endif]-->
+<!--[if IE 8 ]><html class="ie ie8" lang="en"> <![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!--><html lang="en"> <!--<![endif]-->
+<head>
+    <!-- Page info -->
+	<meta charset="utf-8">
+    <title>Reasons Why Sonya Is Awesome - a berfday website</title>
+	<meta charset="utf-8" /> 
+	<meta name="description" content="A website displaying random reasons why
+    Sonya is awesome." /> 
+    <meta name="author" content="Rob Spectre" />
+	<meta name="keywords" content="sonya, awesome, sonya is awesome, rob
+    spectre, brooklyn hacker, birthday card" /> 
+
+    <!-- Mobile -->
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    <!-- CSS -->
+	<link rel="stylesheet" href="/static/stylesheets/base.css">
+	<link rel="stylesheet" href="/static/stylesheets/skeleton.css">
+	<link rel="stylesheet" href="/static/stylesheets/layout.css">
+	<link rel="stylesheet" href="/static/stylesheets/index.css">
+
+    <!-- Sharing -->
+	<link rel="shortcut icon" href="/static/images/favicon.ico">
+	<link rel="apple-touch-icon" href="/static/images/apple-touch-icon.png">
+	<link rel="apple-touch-icon" sizes="72x72" href="/static/images/apple-touch-icon-72x72.png">
+	<link rel="apple-touch-icon" sizes="114x114" href="/static/images/apple-touch-icon-114x114.png">
+	<meta property="og:title" content="Reasons Why Sonya Is Awesome." /> 
+	<meta property="og:description" content="Refresh your page to get another
+    reason why Sonya is awesome." /> 
+  	<meta property="og:image" content="" /> 
+
+    <!-- GA -->
+	<script type="text/javascript">
+	var _gaq = _gaq || [];
+	_gaq.push(['_setAccount', 'UA-1608534-11']);
+	_gaq.push(['_trackPageview']);
+
+	(function() {
+	var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+	ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+	var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+	})();
+	</script>  
+</head>
+<body>
+
+<!-- Content -->
+<div id="container" class="container">
+    <div id="header" class="row">
+        <div class="row">
+            <h1>Reasons Why Sonya Is Awesome</h1>
+        </div>
+        <div class="ten columns alpha">
+            <h2>A random reason why Sonya is awesome.</h2>
+        </div>
+        <div class="six columns omega">
+            <h2>SMS (718)285-0684</h2>
+        </div>
+    </div>
+    <div id="call" class="row">
+        <div class="two column alpha">
+            <a id="call-button" class="button" href="#">Loading</a>
+        </div>
+        <div class="five columns">
+            <ul id="call-options">
+                <li><a id="option1" class="button" href="#">1</a></li>
+                <li><a id="option2" class="button" href="#">2</a></li>
+            </ul>
+        </div>
+        <div class="eight columns omega">
+            <p id="call-status"></p>
+        </div>
+    </div>
+    <div id="social" class="row">
+        <div id="twitter" class="six column alpha">
+            <a href="https://twitter.com/share" class="twitter-share-button"
+                data-url="http://www.reasonssonyaisawesome.com"
+                data-text="*Finally*.  Someone made a website why @yeruria is
+                awesome."
+                data-size="large">Tweet</a>
+            <script>!function(d,s,id){var
+            js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+        </div>
+        <div id="facebook" class="six column omega">
+            <iframe
+                src="//www.facebook.com/plugins/like.php?href=http%3A%2F%2Fwww.reasonssonyaisawesome.com&amp;send=false&amp;layout=standard&amp;width=450&amp;show_faces=true&amp;action=like&amp;colorscheme=dark&amp;font&amp;height=80&amp;appId=177565805637762"
+                scrolling="no" frameborder="0" style="border:none;
+                overflow:hidden; width:450px; height:80px;"
+                allowTransparency="true"></iframe>
+        </div>
+    </div>
+    <div id="image-container" class="row">
+        <div id="image"></div>
+    </div>
+    <div id="footer" class="row">
+        <div class="thirteen columns alpha">
+            <p>Created by <a href="http://www.brooklynhacker.com">Rob</a> and <a
+                href="http://www.twitter.com/alexaizenberg">Alex.</a></p>
+        </div>
+        <br class="clear" />
+        <div class="row">
+            <p><a href="https://github.com/RobSpectre/Reasons-Sonya-Is-Awesome">Source code</a> released under <a href="http://www.mozilla.org/MPL/"> 
+            Mozilla Public License</a>.
+            Happy birthday Sonya!</p>
+        </div>
+    </div>
+</div>
+
+<!-- JS -->
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.min.js"></script>
+<script type="text/javascript" src="http://static.twilio.com/libs/twiliojs/1.0/twilio.min.js"></script>
+<script type="text/javascript">
+    function sendTone(e, conn, string) {
+        e.preventDefault();
+        conn.sendDigits(string);
+    }
+
+    function setupCall() {
+        $('#call-button').unbind();
+        $('#call-button').click(function(e) {
+            e.preventDefault();
+            $('#call-options').fadeIn('slow');
+            Twilio.Device.connect();
+            $(this).text("Connecting")
+            });
+        $('#call-button').text("Call");
+    }
+
+    function setupHangup() {
+        $('#call-button').unbind("click");
+        $('#call-button').click(function(e) {
+            e.preventDefault();
+            Twilio.Device.disconnectAll();
+        });
+        $('#call-button').text("Hangup");
+    }
+
+    Twilio.Device.setup("{{ token }}");
+
+    Twilio.Device.ready(function (device) {
+        setupCall();
+    });
+
+    Twilio.Device.error(function (error) {
+      $("#call-button").text("Error");
+      $("#call-button").removeAttr('href');
+      $("#call-status").text(error.message).fadeIn('slow');
+    });
+
+    Twilio.Device.connect(function (conn) {
+        $("#call-button").text("Connected");
+        $("#option1").unbind();
+        $("#option2").unbind();
+        $("#option3").unbind();
+        $("#option4").unbind();
+        $("#option1").click(function(e) {
+            sendTone(e, conn, '1');
+        });
+        $("#option2").click(function(e) {
+            sendTone(e, conn, '2');
+        });
+        $("#option3").click(function(e) {
+            sendTone(e, conn, '3');
+        });
+        $("#option4").click(function(e) {
+            sendTone(e, conn, '4');
+        });
+        setupHangup();
+    });
+
+    Twilio.Device.disconnect(function (conn) {
+      $("#call-status").text("Call ended.").fadeOut('slow');
+      $('#call-options').fadeOut('slow');
+      setupCall();
+    });
+
+</script>
+</body>
+</html>
