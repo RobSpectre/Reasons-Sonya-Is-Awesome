@@ -88,13 +88,21 @@ def reasonSonyaIsAwesome():
             'Kent: You have a great sense of humor.',
             'Ellen: Your brain is is awesome.',
             'Becca: You are a good listener and has a fantastic perspective.',
-            'Becca: You accomplished everything she hoped to before 30.',
+            'Becca: You accomplished everything you hoped to before 30.',
             'Becca: You were in every Las Vegas casino before she was 18.',
             'Becca: You can be counted on to be an emergency contact for '\
                 'friends who don\'t have family in NYC.',
             'Becca: You were at bars in Williamsburg even when you were ' \
                 'super pregnant.',
-            'Becca: You like both opera and ska music.']
+            'Becca: You like both opera and ska music.',
+            'Rob: You are one of the most fiercely loyal people in New York.',
+            'Rob: The scope of your intellect is matched only by the size ' \
+                    'of your heart',
+            'Rob: You remember where you came from and are grateful for ' \
+                    'the journey.',
+            'Rob: You and Alex form my ideal of matrimony.',
+            'Rob: Your family comes first.',
+            'Rob: You do not front.']
     return choice(reasons)
 
 if __name__ == '__main__':
