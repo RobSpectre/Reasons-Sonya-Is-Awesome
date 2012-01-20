@@ -1,17 +1,30 @@
 from flask import Flask
 from flask import request
+from flask import url_for
 from flask import render_template
 from twilio import twiml
+from twilio.util import TwilioCapability
 import os
 from random import choice
+from local_settings import *
 
 
-app = Flask(__name__)
+# Declare and configure application
+app = Flask(__name__, static_url_path='/static')
+app.config['ACCOUNT_SID'] = ACCOUNT_SID
+app.config['AUTH_TOKEN'] = AUTH_TOKEN
+app.config['SONYA_APP_SID'] = SONYA_APP_SID
+app.config['SONYA_CALLER_ID'] = SONYA_CALLER_ID
 
 
 @app.route('/')
 def index():
-    return str("Sonya is awesome!") 
+    reason = reasonSonyaIsAwesome()
+    capability = TwilioCapability(app.config['ACCOUNT_SID'],
+        app.config['AUTH_TOKEN'])
+    capability.allow_client_outgoing(app.config['SONYA_APP_SID'])
+    token = capability.generate()
+    return render_template('index.html', token=token, reason=reason)
 
 
 @app.route('/voice', methods=['POST'])
@@ -70,7 +83,16 @@ def reasonSonyaIsAwesome():
             'Alex: You are the neck of our family.',
             'Alex: You have a great waist.',
             'Kent: You are have very intelligent discussions.',
-            'Kent: You have a great sense of humor.']
+            'Kent: You have a great sense of humor.',
+            'Ellen: Your brain is is awesome.',
+            'Becca: You are a good listener and has a fantastic perspective.',
+            'Becca: You accomplished everything she hoped to before 30.',
+            'Becca: You were in every Las Vegas casino before she was 18.',
+            'Becca: You can be counted on to be an emergency contact for '\
+                'friends who don\'t have family in NYC.',
+            'Becca: You were at bars in Williamsburg even when you were ' \
+                'super pregnant.',
+            'Becca: You like both opera and ska music.']
     return choice(reasons)
 
 if __name__ == '__main__':
