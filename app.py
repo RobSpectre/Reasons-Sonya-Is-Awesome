@@ -68,7 +68,9 @@ def reasonSonyaIsAwesome():
             'Alex: You are a great mother.',
             'Alex: You are a very smart woman.',
             'Alex: You are the neck of our family.',
-            'Alex: You have a great waist.']
+            'Alex: You have a great waist.',
+            'Kent: You are have very intelligent discussions.',
+            'Kent: You have a great sense of humor.']
     return choice(reasons)
 
 if __name__ == '__main__':
