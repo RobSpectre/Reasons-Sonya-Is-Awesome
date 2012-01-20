@@ -84,3 +84,48 @@ h1 {
         height: 300px;
     }
 }
+
+/* BRENDAN'S ADDS */
+
+body {
+  background: url('../img/white_plaster.png') top center repeat;
+}
+
+header {
+  margin-bottom: -15px;
+  z-index: 2;
+}
+
+#page {
+  z-index 1;
+  width: 100%;
+  min-height: 300px;
+  background: rgb(230,230,230);
+  box-shadow: 0 0 4px rgb(120,120,120);
+  background-color: #eeeeee;
+  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #eeeeee), color-stop(100%, #cccccc));
+  background-image: -webkit-linear-gradient(top, #eeeeee, #cccccc);
+  background-image: -moz-linear-gradient(top, #eeeeee, #cccccc);
+  background-image: -ms-linear-gradient(top, #eeeeee, #cccccc);
+  background-image: -o-linear-gradient(top, #eeeeee, #cccccc);
+  background-image: linear-gradient(top, #eeeeee, #cccccc);
+  border: 1px solid #ccc;
+  border-bottom: 1px solid #bbb;
+  -webkit-border-radius: 0 0 3px 3px;
+  -moz-border-radius: 3px;
+  -o-border-radius: 3px;
+  border-radius: 3px;
+}
+  #page ol {
+    padding: 25px 10px;
+    margin-bottom: 50px;
+    margin-left: 4em;
+  }
+    #page ol li {
+      line-height: 1.5em;
+      margin-top: 5px;
+      font-size: 2.0em;
+      font-weight: bold;
+      color: rgb(60,60,60);
+      text-shadow: 0 0 1px rgb(120,120,120);
+    }
