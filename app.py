@@ -107,7 +107,8 @@ def reasonSonyaIsAwesome():
             'Rob: Your family comes first.',
             'Rob: You do not front.',
             'Bill: You speak Russian.  LOUD.',
-            'Alex: You vote in every election.']
+            'Alex: You vote in every election.',
+            'Bill: You are my best friend\'s hit wife.',]
     return choice(reasons)
 
 if __name__ == '__main__':
