@@ -48,6 +48,8 @@ def repeat():
     r = twiml.Response()
     if request.form['Digits'] == '1':
         reason = reasonSonyaIsAwesome()
+        reason.replace(':', '.')
+        reason = "This one is from %s" % reason
         r.say(reason)
     elif request.form['Digits'] == '2':
         r.say('Bye Sonya!')

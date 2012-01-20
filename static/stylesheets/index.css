@@ -97,6 +97,14 @@ body {
         z-index: 1;
     }
     
+    #page ul {
+        margin-left: 2em;
+    }
+
+    #page ul li {
+      line-height: 1.2em;
+      font-size: 1.7em;
+    }
 }
 
 @media only screen and (max-width: 479px) {
@@ -111,6 +119,15 @@ body {
 
     #page {
         z-index: 1;
+    }
+
+    #page ul {
+        margin-left: 1em;
+    }
+
+    #page ul li {
+      line-height: 1.0em;
+      font-size: 1.5em;
     }
 }
 
