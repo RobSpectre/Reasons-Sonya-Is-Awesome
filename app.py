@@ -9,7 +9,7 @@ app = Flask(__name__)
 
 @app.route('/')
 def index():
-    pass
+    return str("Sonya is awesome!") 
 
 
 @app.route('/voice', methods=['POST'])
