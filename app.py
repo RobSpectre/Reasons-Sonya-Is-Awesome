@@ -35,7 +35,7 @@ def sms():
     return str(r)
 
 
-def reasonSonyaIsAwesome(self):
+def reasonSonyaIsAwesome():
     reasons = [
             'Alex: You hate the Giants.',
             'Alex: You can make a mean clafuti.',
