@@ -56,8 +56,11 @@ def repeat():
         r.hangup()
     else:
         r.say('I did not understand your input.')
-    r.say('Press 1 if you would like to hear another reason.  Press 2 or ' \
+    with r.gather(action='/gather', numDigits='1') as g:
+        g.say('Press 1 if you would like to hear another reason.  Press 2 or ' \
         'hangup if you are finished.')
+    r.pause()
+    r.redirect('/voice')
     return str(r)
 
 
