@@ -19,6 +19,8 @@ def voice():
     r = twiml.Response()
     r.say('Hello Sonya.  Here are some reasons why you are awesome.')
     reason = reasonSonyaIsAwesome()
+    reason.replace(':', '.')
+    reason = "This one is from %s" % reason
     r.say(reason)
     with r.gather(action='/gather', numDigits='1') as g:
         g.say('Press 1 if you would like to hear another message.  Press 2 or ' \
