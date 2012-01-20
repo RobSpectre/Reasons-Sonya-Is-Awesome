@@ -58,6 +58,18 @@ class Test_Voice(WebTest):
         self.assertTrue("<Redirect" in response.data, "Did not find " \
                 "<Redirect> in response: %s" % response.data)
 
+    def test_repeat(self):
+        response = self.call('/gather', digits='1')
+        self.assertTwiML(response)
+        self.assertTrue(':' in response.data, "Did not find " \
+                "repeated reason in response: %s" % response.data)
+
+    def test_repeatHangup(self):
+        response = self.call('/gather', digits='2')
+        self.assertTwiML(response)
+        self.assertTrue('<Hangup' in response.data, "Did not find " \
+                "<Hangup> in response: %s" % response.data)
+
     def test_songsWrongInput(self):
         for i in range(5, 10):
             response = self.call('/gather', digits=str(i))
@@ -80,6 +92,12 @@ class Test_Sms(WebTest):
         self.assertTwiML(response)
         self.assertTrue(":" in response.data, "Did not find " \
                 "a preface colon in response: %s" % response.data)
+
+    def test_smsHelp(self):
+        response = self.sms("help")
+        self.assertTwiML(response)
+        self.assertTrue("GIMME" in response.data, "Did not find " \
+                "GIMME in response: %s" % response.data)
 
 
 if __name__ == '__main__':
