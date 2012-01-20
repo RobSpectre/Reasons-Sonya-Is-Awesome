@@ -17,14 +17,14 @@ def index():
 @app.route('/voice', methods=['POST'])
 def voice():
     r = twiml.Response()
-    r.say('Hello Sonya.  Here are some reasons why you are awesome.')
+    r.say('Hello Sonya.  Here is a reason why you are awesome.')
     reason = reasonSonyaIsAwesome()
     reason.replace(':', '.')
     reason = "This one is from %s" % reason
     r.say(reason)
     with r.gather(action='/gather', numDigits='1') as g:
-        g.say('Press 1 if you would like to hear another message.  Press 2 or ' \
-        'if you are finished.')
+        g.say('Press 1 if you would like to hear another reason.  Press 2 or ' \
+        'hangup if you are finished.')
     r.pause()
     r.redirect('/voice')
     return str(r)
@@ -41,8 +41,8 @@ def repeat():
         r.hangup()
     else:
         r.say('I did not understand your input.')
-    r.say('Press 1 if you would like to hear another message.  Press 2 or ' \
-        'if you are finished.')
+    r.say('Press 1 if you would like to hear another reason.  Press 2 or ' \
+        'hangup if you are finished.')
     return str(r)
 
 
