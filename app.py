@@ -1,4 +1,6 @@
 from flask import Flask
+from flask import request
+from flask import render_template
 from twilio import twiml
 import os
 from random import choice
@@ -18,6 +20,25 @@ def voice():
     r.say('Hello Sonya.  Here are some reasons why you are awesome.')
     reason = reasonSonyaIsAwesome()
     r.say(reason)
+    with r.gather(action='/gather', numDigits='1') as g:
+        g.say('Press 1 if you would like to hear another message.  Press 2 or ' \
+        'if you are finished.')
+    r.pause()
+    r.redirect('/voice')
+    return str(r)
+
+
+@app.route('/gather', methods=['POST'])
+def repeat():
+    r = twiml.Response()
+    if request.form['Digits'] == '1':
+        reason = reasonSonyaIsAwesome()
+        r.say(reason)
+    elif request.form['Digits'] == '2':
+        r.say('Bye Sonya!')
+        r.hangup()
+    else:
+        r.say('I did not understand your input.')
     r.say('Press 1 if you would like to hear another message.  Press 2 or ' \
         'if you are finished.')
     return str(r)
@@ -27,7 +48,7 @@ def voice():
 def sms():
     r = twiml.Response()
     reason = reasonSonyaIsAwesome()
-    if self.request.get('Body').upper() == "HELP":
+    if request.form['Body'].upper() == "HELP":
         r.sms("Welcome to the Reasons Sonya Is Awesome Hotline.  Text GIMME " \
                 "to get a reason Sonya is awesome.")
     else:
