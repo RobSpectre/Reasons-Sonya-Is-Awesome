@@ -65,7 +65,7 @@ def sms():
     reason = reasonSonyaIsAwesome()
     if request.form['Body'].upper() == "HELP":
         r.sms("Welcome to the Reasons Sonya Is Awesome Hotline.  Text GIMME " \
-                "to get a reason Sonya is awesome.")
+                "to get one random reason Sonya is awesome.")
     else:
         r.sms(reason)
     return str(r)
