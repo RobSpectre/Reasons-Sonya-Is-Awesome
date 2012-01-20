@@ -20,7 +20,6 @@
     <!-- CSS -->
 	<link rel="stylesheet" href="/static/stylesheets/base.css">
 	<link rel="stylesheet" href="/static/stylesheets/skeleton.css">
-    <link rel="stylesheet" href="/static/stylesheets/960.css">
 	<link rel="stylesheet" href="/static/stylesheets/layout.css">
 	<link rel="stylesheet" href="/static/stylesheets/index.css">
 
@@ -50,53 +49,8 @@
 <body>
 
 <!-- Brendan's Version of Content -->
-  <div id="container" class="container_12">
-    <header class="grid_10 prefix_1 suffix_1">
-      <img src="img/header.png" />
-    </header>
-    <div id="main" role="main" class="grid_8 prefix_2 suffix_2">
-      <div id="page">
-        <ol>
-          <li>You hate the Giants</li>
-          <li>You Make a Mean Cliffouti</li>
-        </ol>
-      </div>
-    </div>
-    <footer>
-
-    </footer>
-  </div> <!--! end of #container -->
-<!-- End Brendan's Content -->
-
-<!-- Content -->
-<div id="container" class="container">
-
-    <div id="header" class="row">
-        <div class="row">
-            <h1>Reasons Why Sonya Is Awesome</h1>
-        </div>
-        <div class="ten columns alpha">
-            <h2>A random reason why Sonya is awesome.</h2>
-        </div>
-        <div class="six columns omega">
-            <h2>SMS (718)285-0684</h2>
-        </div>
-    </div>
-    <div id="call" class="row">
-        <div class="two column alpha">
-            <a id="call-button" class="button" href="#">Loading</a>
-        </div>
-        <div class="five columns">
-            <ul id="call-options">
-                <li><a id="option1" class="button" href="#">1</a></li>
-                <li><a id="option2" class="button" href="#">2</a></li>
-            </ul>
-        </div>
-        <div class="eight columns omega">
-            <p id="call-status"></p>
-        </div>
-    </div>
-    <div id="social" class="row">
+  <div id="container" class="container container-twelve">
+    <div id="social" class="ten columns offset-by-one">
         <div id="twitter" class="six column alpha">
             <a href="https://twitter.com/share" class="twitter-share-button"
                 data-url="http://www.reasonssonyaisawesome.com"
@@ -114,22 +68,31 @@
                 allowTransparency="true"></iframe>
         </div>
     </div>
-    <div id="image-container" class="row">
-        <div id="image"></div>
+    <header class="ten columns offset-by-one">
+      <div id="header"></div>
+    </header>
+    <div id="main" role="main" class="eight columns offset-by-two omega">
+      <div id="page">
+        <ul>
+            <li>{{reason}}</li>
+        </ul>
+      </div>
     </div>
+    <footer>
     <div id="footer" class="row">
-        <div class="thirteen columns alpha">
+        <div class="eight columns offset-by-two alpha">
             <p>Created by <a href="http://www.brooklynhacker.com">Rob</a> and <a
-                href="http://www.twitter.com/alexaizenberg">Alex.</a></p>
+                href="http://www.twitter.com/alexaizenberg">Alex.</a> Design by
+            <a href="http://www.partoftheprocess.ca/">Brendan O'Brien.</a></p>
         </div>
-        <br class="clear" />
-        <div class="row">
+        <div class="eight columns offset-by-two omega">
             <p><a href="https://github.com/RobSpectre/Reasons-Sonya-Is-Awesome">Source code</a> released under <a href="http://www.mozilla.org/MPL/"> 
             Mozilla Public License</a>.
             Happy birthday Sonya!</p>
         </div>
     </div>
-</div>
+    </footer>
+  </div>
 
 <!-- JS -->
 <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.min.js"></script>

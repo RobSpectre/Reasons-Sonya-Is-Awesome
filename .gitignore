@@ -8,4 +8,4 @@ lib
 *.pydevproject
 *.pyo
 *.mp3
-local_settings.py
+*.swp

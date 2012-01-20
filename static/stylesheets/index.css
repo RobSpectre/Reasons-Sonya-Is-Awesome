@@ -1,99 +1,10 @@
-html, body {
-    background: rgb(42,30,51);
-    color: white;
-    font-family: Helvetica, Verdana, sans-serif;
-}
-
-h1, h2, h3, h4, h5 {
-    font-family: 'Lato', Verdana, sans-serif;
-    font-weight: 900;
-    color: white;
-    text-transform: uppercase;
-    letter-spacing: -2px;
-}
-
-h1 {
-    margin: -7px 0 0 0;
-    letter-spacing: -3px;
-    font-size: 4em;
-}
-
-#header a:link, #footer a:link {
-    text-decoration: none;
-    color: rgb(224,108,13);
-}
-
-#header a:hover, #footer a:hover {
-    color: rgb(217,45,11);
-}
-
-#header a:visited, #footer a:visited {
-    color: rgb(240,179,38);
-}
-
-#call-options li {
-    display: inline;
-}
-
-#call-options, #call-status {
-    display: none;
-}
-
-#call-button, #option1, #option2, #option3, #option4 {
-    font-size: 24px;
-    padding: 8px 24px;
-}
-
-#twilio-logo {
-    text-decoration: none;
-    text-align: right;
-    display: inline-block;
-    width: 166px;
-    height: 0;
-    overflow: hidden;
-    padding-top: 31px;
-    background: url('http://www.twilio.com/packages/company/img/logos_icon_poweredbysmall.png') no-repeat;
-}
-
-#image {
-    background: url('/static/images/ramones-953x953.jpg');
-    width: 953px;
-    height: 953px;
-}
-
-@media only screen and (max-width: 959px) {
-    #image {
-        background: url('/static/images/ramones-750x750.jpg');
-        width: 750px;
-        height: 750px;
-    }
-}
-
-@media only screen and (min-width: 480px) and (max-width: 767px) {
-    #image {
-        background: url('/static/images/ramones-460x460.jpg');
-        width: 460px;
-        height: 460px;
-    }
-}
-
-@media only screen and (max-width: 479px) {
-    #image {
-        background: url('/static/images/ramones-300x300.jpg');
-        width: 300px;
-        height: 300px;
-    }
-}
-
-/* BRENDAN'S ADDS */
-
 body {
-  background: url('../img/white_plaster.png') top center repeat;
+  background: url('/static/img/white_plaster.png') top center repeat;
+  font-family: Helvetica, Verdana, sans-serif;
 }
 
 header {
   margin-bottom: -15px;
-  z-index: 2;
 }
 
 #page {
@@ -116,12 +27,13 @@ header {
   -o-border-radius: 3px;
   border-radius: 3px;
 }
-  #page ol {
+  #page ul {
+    list-style-type: none;
     padding: 25px 10px;
     margin-bottom: 50px;
     margin-left: 4em;
   }
-    #page ol li {
+    #page ul li {
       line-height: 1.5em;
       margin-top: 5px;
       font-size: 2.0em;
@@ -129,3 +41,59 @@ header {
       color: rgb(60,60,60);
       text-shadow: 0 0 1px rgb(120,120,120);
     }
+
+#footer p {
+    color: black;
+}
+
+#footer a, #footer a:visited, #footer a:hover {
+    color: #5c57a6;
+}
+
+#call-options li {
+    display: inline;
+}
+
+#call-options, #call-status {
+    display: none;
+}
+
+#call-button, #option1, #option2, #option3, #option4 {
+    font-size: 24px;
+    padding: 8px 24px;
+}
+
+#header {
+    background: url('/static/img/header.png');
+    width: 780px;
+    height: 261px;
+    z-index 2;
+}
+
+@media only screen and (max-width: 959px) {
+    #header {
+        background: url('/static/img/header-620x207.png');
+        width: 620px;
+        height: 207px;
+    }
+}
+
+@media only screen and (min-width: 480px) and (max-width: 767px) {
+    #header {
+        background: url('/static/img/header-540x181.png');
+        width: 540px;
+        height: 181px;
+        margin-left: -60px;
+        margin-bottom: -15px;
+    }
+    
+}
+
+@media only screen and (max-width: 479px) {
+    #header {
+        background: url('/static/img/header-380x127.png');
+        width: 380px;
+        height: 127px;
+    }
+}
+
