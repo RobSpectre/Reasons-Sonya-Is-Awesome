@@ -100,5 +100,17 @@ class Test_Sms(WebTest):
                 "GIMME in response: %s" % response.data)
 
 
+class Test_Web(WebTest):
+    def test_index(self):
+        response = self.app.get('/')
+        self.assertTrue("</html>" in response.data, "Did not find " \
+                "html tag close in response: %s" % response.data)
+
+    def test_reaction(self):
+        response = self.app.get('/reaction')
+        self.assertTrue("</html>" in response.data, "Did not find " \
+                "html tag close in response: %s" % response.data)
+
+
 if __name__ == '__main__':
     unittest.main()

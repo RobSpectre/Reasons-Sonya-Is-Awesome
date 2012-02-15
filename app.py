@@ -4,6 +4,7 @@ from flask import url_for
 from flask import render_template
 from twilio import twiml
 from twilio.util import TwilioCapability
+from twilio.rest import TwilioRestClient
 import os
 from random import choice
 from local_settings import *
@@ -25,6 +26,13 @@ def index():
     capability.allow_client_outgoing(app.config['SONYA_APP_SID'])
     token = capability.generate()
     return render_template('index.html', token=token, reason=reason)
+
+@app.route('/reaction')
+def index():
+    client = TwilioRestClient(app.config['ACCOUNT_SID'],
+        app.config['AUTH_TOKEN'])
+    messages = client.sms.messages.list(to=app.config['SONYA_CALLER_ID'],
+            from_='+19734779946')
 
 
 @app.route('/voice', methods=['POST'])

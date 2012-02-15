@@ -28,3 +28,4 @@ I'm using a bunch of fun stuff here:
   Aizenberg](http://www.build-a-beard.com)
 * Artist: [Brendan O'Brien](http://partoftheprocess.ca)
 * License: [Mozilla Public License](http://www.mozilla.org/MPL/)
+* Ruby / Sinatra Port: [Steven Chau](https://github.com/whereisciao/Reasons-Sonya-Is-Awesome)
