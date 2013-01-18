@@ -12,6 +12,43 @@ Happy birthday Sonya!  I cut you some codez.
 
 Text or call (718)285-0684 to use the mobile experience.
 
+## Getting Started
+
+Feel free to modify this project for the special people in your life. 
+
+Should this be deleted from project:
+
+Begin Heroku configuration - configured through environment variables.
+import os
+ACCOUNT_SID = os.environ['ACCOUNT_SID']
+AUTH_TOKEN = os.environ['AUTH_TOKEN']
+SONYA_APP_SID = os.environ['SONYA_APP_SID']
+SONYA_CALLER_ID = os.environ['SONYA_CALLER_ID']
+
+1. Create a Twilio account if you do not already have one. 
+2. Buy a phone number 
+3. Create a TwIML application. Associate your phone number with this appliation. 
+4. In local_settings.py uncomment lines 8-11. Changes the variables to the ones you have set up on your Twilio account. You will see your Account SID and your Auth Tokin on the top of your Twilio account Dashboard. The APP SID is the name of your TwIML applicarion. 
+
+	Uncommet to configure in file.  
+	ACCOUNT_SID = "ACxxxxxxxxxxxxx"  
+	AUTH_TOKEN = "yyyyyyyyyyyyyyyy"
+	SONYA_APP_SID = "APzzzzzzzzz"
+	SONYA_CALLER_ID = "+17778889999" 
+	
+	
+5. Set you your Voice Request URL for your Twilio number to Application_url/voice
+
+For example
+
+	http://immense-oasis-2092.herokuapp.com/voice
+
+And your SMS Request URL to Application_url/sms
+
+For example
+
+	http://immense-oasis-2092.herokuapp.com/sms
+
 
 ## Technology
 
