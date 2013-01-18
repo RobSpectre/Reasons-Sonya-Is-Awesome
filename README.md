@@ -16,15 +16,6 @@ Text or call (718)285-0684 to use the mobile experience.
 
 Feel free to modify this project for the special people in your life. 
 
-Should this be deleted from project:
-
-Begin Heroku configuration - configured through environment variables.
-import os
-ACCOUNT_SID = os.environ['ACCOUNT_SID']
-AUTH_TOKEN = os.environ['AUTH_TOKEN']
-SONYA_APP_SID = os.environ['SONYA_APP_SID']
-SONYA_CALLER_ID = os.environ['SONYA_CALLER_ID']
-
 1. Create a Twilio account if you do not already have one. 
 2. Buy a phone number 
 3. Create a TwIML application. Associate your phone number with this appliation. 
