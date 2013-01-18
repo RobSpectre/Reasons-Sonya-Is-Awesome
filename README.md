@@ -17,9 +17,10 @@ Text or call (718)285-0684 to use the mobile experience.
 Feel free to personalize this project for the special people in your life. 
 
 1. Create a Twilio account if you do not already have one. 
-2. Buy a phone number 
+2. Buy a phone number. 
 3. Create a TwIML application. Associate your phone number with this appliation. 
-4. In local_settings.py uncomment lines 8-11. Changes the variables to the ones you have set up on your Twilio account. You will see your Account SID and your Auth Tokin on the top of your Twilio account Dashboard. The APP SID is the name of your TwIML applicarion. 
+4. In local_settings.py uncomment lines 8-11. Changes the variables to the ones you have set up on your Twilio account. 
+You will see your ACCOUNT SID and your AUTH TOKEN on the top of your Twilio account Dashboard. The APP SID is the name of your TwIML application. 
 
 ```python
 Uncommet to configure in file.  
