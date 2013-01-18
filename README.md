@@ -21,12 +21,22 @@ Feel free to personalize this project for the special people in your life.
 3. Create a TwIML application. Associate your phone number with this appliation. 
 4. In local_settings.py uncomment lines 8-11. Changes the variables to the ones you have set up on your Twilio account. You will see your Account SID and your Auth Tokin on the top of your Twilio account Dashboard. The APP SID is the name of your TwIML applicarion. 
 
+<<<<<<< HEAD
 	Uncommet to configure in file.  
 	ACCOUNT_SID = "ACxxxxxxxxxxxxx"  
 	AUTH_TOKEN = "yyyyyyyyyyyyyyyy"
 	SONYA_APP_SID = "APzzzzzzzzz"
 	SONYA_CALLER_ID = "+17778889999" 
 	
+=======
+```python
+Uncommet to configure in file.  
+ACCOUNT_SID = "ACxxxxxxxxxxxxx"  
+AUTH_TOKEN = "yyyyyyyyyyyyyyyy"
+SONYA_APP_SID = "APzzzzzzzzz"
+SONYA_CALLER_ID = "+17778889999" 
+```	
+>>>>>>> userdoc
 	
 5. Set you your Voice Request URL for your Twilio number to Application_url/voice
 
