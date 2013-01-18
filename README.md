@@ -14,7 +14,7 @@ Text or call (718)285-0684 to use the mobile experience.
 
 ## Getting Started
 
-Feel free to modify this project for the special people in your life. 
+Feel free to personalize this project for the special people in your life. 
 
 1. Create a Twilio account if you do not already have one. 
 2. Buy a phone number 
