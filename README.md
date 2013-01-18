@@ -56,5 +56,6 @@ I'm using a bunch of fun stuff here:
 * Authors: [Rob Spectre](http://www.brooklynhacker.com) and [Alex 
   Aizenberg](http://www.build-a-beard.com)
 * Artist: [Brendan O'Brien](http://partoftheprocess.ca)
+* Documentation: [Veronica Ray](https://github.com/mathonsunday)
 * License: [Mozilla Public License](http://www.mozilla.org/MPL/)
 * Ruby / Sinatra Port: [Steven Chau](https://github.com/whereisciao/Reasons-Sonya-Is-Awesome)
